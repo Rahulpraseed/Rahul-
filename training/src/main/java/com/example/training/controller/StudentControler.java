@@ -30,7 +30,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class StudentControler {
 
-	private static Logger log = LoggerFactory.getLogger(StudentControler.class);
+	
 
 	@Autowired
 	private StudentService service;

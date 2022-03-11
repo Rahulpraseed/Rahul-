@@ -22,11 +22,11 @@ import lombok.extern.slf4j.Slf4j;
  * @author vn51ore
  *
  */
-
+@Slf4j
 @Service
 public class StudentService {
 
-	private static Logger log = LoggerFactory.getLogger(StudentService.class);
+	
 	@Autowired
 	private StudentRepository repo;
 

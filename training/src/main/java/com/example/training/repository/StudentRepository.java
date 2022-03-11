@@ -21,10 +21,11 @@ import com.example.training.service.StudentService;
  * @author vn51ore
  *
  */
+@Slf4j
 @Repository
 public class StudentRepository {
 
-	private static Logger log = LoggerFactory.getLogger(StudentRepository.class);
+	
 	List<Student> studentList;
 
 	/**
