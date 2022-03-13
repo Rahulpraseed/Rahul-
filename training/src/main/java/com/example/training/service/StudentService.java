@@ -1,19 +1,24 @@
-/*Class Name  : StudentService
- *Description : Service class for Student
- *Date of Creation: 05/02/2022
- *Author : vn51ore
- */
+/* ********************************************************************************
+ * Project Name                                  : StudentApplication
+ * Author                                        : vn51ore
+ *
+ * Copyright Notice
+ *
+ * Copyright (c) 2021 Walmart. All Right Reserved.
+ * This software is the confidential and proprietary information of WalMart
+ * You shall not disclose or use Confidential information without the express
+ * written agreement of Walmart
+ *********************************************************************************/
 package com.example.training.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
 import com.example.training.model.Student;
 import com.example.training.repository.StudentRepository;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -26,9 +31,8 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class StudentService {
 
-	
 	@Autowired
-	private StudentRepository repo;
+	private StudentRepository studentRepo;
 
 	/**
 	 * Method to getAllStudent
@@ -36,10 +40,10 @@ public class StudentService {
 	 * @return student
 	 */
 	public List<Student> getAllStudent() {
-		log.info("getAllStudent methods start");
-		List student = repo.getAllStudent();
+		log.debug("getAllStudent methods start");
+		List student = studentRepo.getAllStudent();
 
-		log.info("getAllStudent methods end");
+		log.debug("getAllStudent methods end");
 		return student;
 	}
 
@@ -51,8 +55,8 @@ public class StudentService {
 	 */
 	public List<Student> getStudentByRollNo(Integer rolNo) {
 		log.info("getStudentByRollNo methods start with argument rollNo {}", rolNo);
-		List<Student> stud = repo.getStudent(rolNo);
-		log.info("getStudentByRollNo methods end");
+		List<Student> stud = studentRepo.getStudent(rolNo);
+		log.debug("getStudentByRollNo methods end");
 		return stud;
 	}
 
@@ -64,8 +68,8 @@ public class StudentService {
 	 */
 	public Student createStudent(Student student) {
 		log.info("createStudent method start with argument stud {}", student);
-		Student stud = repo.createStudent(student);
-		log.info("createStudent method end");
+		Student stud = studentRepo.createStudent(student);
+		log.debug("createStudent method end");
 		return stud;
 	}
 
@@ -76,8 +80,8 @@ public class StudentService {
 	 */
 	public void deleteStudent(Integer rollNo) {
 		log.info("deleteStudent method with argument rollNo {}", rollNo);
-		repo.deleteStudent(rollNo);
-		log.info("deleteStudent method end");
+		studentRepo.deleteStudent(rollNo);
+		log.debug("deleteStudent method end");
 	}
 
 	/**
@@ -88,8 +92,8 @@ public class StudentService {
 	 */
 	public Student updateStudent(Student student) {
 		log.info("updateStudent method start with argument stud {}", student);
-		Student stud = repo.updateStudent(student);
-		log.info("updateStudent method end");
+		Student stud = studentRepo.updateStudent(student);
+		log.debug("updateStudent method end");
 		return stud;
 
 	}

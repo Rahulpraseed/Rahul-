@@ -1,19 +1,25 @@
-/*Class Name  : StudentRepository
- *Description : StudentRepository class for Student
- *Date of Creation: 05/02/2022
- *Author : vn51ore
- */
+/* ********************************************************************************
+ * Project Name                                  : StudentApplication
+ * Author                                        : vn51ore
+ *
+ * Copyright Notice
+ *
+ * Copyright (c) 2021 Walmart. All Right Reserved.
+ * This software is the confidential and proprietary information of WalMart
+ * You shall not disclose or use Confidential information without the express
+ * written agreement of Walmart
+ *********************************************************************************/
 package com.example.training.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+
 import com.example.training.model.Student;
-import com.example.training.service.StudentService;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * StudentRepository class for Student
@@ -25,7 +31,6 @@ import com.example.training.service.StudentService;
 @Repository
 public class StudentRepository {
 
-	
 	List<Student> studentList;
 
 	/**
@@ -33,7 +38,7 @@ public class StudentRepository {
 	 * 
 	 */
 	public StudentRepository() {
-		log.info("StudentRepository constructor start");
+		log.debug("StudentRepository constructor start");
 		studentList = new ArrayList<Student>();
 
 		Student s1 = new Student();
@@ -56,7 +61,7 @@ public class StudentRepository {
 		studentList.add(s2);
 		studentList.add(s3);
 		studentList.add(s4);
-		log.info("StudentRepository constructor end");
+		log.debug("StudentRepository constructor end");
 	}
 
 	/**
@@ -65,7 +70,8 @@ public class StudentRepository {
 	 * @return studentList
 	 */
 	public List<Student> getAllStudent() {
-		log.info("getAllStudent methods start");
+		log.debug("getAllStudent methods start");
+		log.debug("getAllStudent methods end");
 		return studentList;
 	}
 
@@ -78,7 +84,7 @@ public class StudentRepository {
 	public List<Student> getStudent(int rollNo) {
 		log.info("getStudent methods start with argument rollNo {}", rollNo);
 		List student = studentList.stream().filter(x -> x.getRollNo() == rollNo).collect(Collectors.toList());
-		log.info("getStudent methods end");
+		log.debug("getStudent methods end");
 		return student;
 
 	}
@@ -92,7 +98,7 @@ public class StudentRepository {
 	public Student createStudent(Student student) {
 		log.info("createStudent methods start with argument student {}", student);
 		studentList.add(student);
-		log.info("createStudent methods end");
+		log.debug("createStudent methods end");
 		return student;
 	}
 
@@ -105,7 +111,7 @@ public class StudentRepository {
 	public void deleteStudent(Integer rollNo) {
 		log.info("deleteStudent methods start with argument rollNo {}", rollNo);
 		studentList.remove(rollNo);
-		log.info("deleteStudent methods end");
+		log.debug("deleteStudent methods end");
 	}
 
 	/**
@@ -122,7 +128,7 @@ public class StudentRepository {
 				stud.setMark(student.getMark());
 			}
 		}
-		log.info("updateStudent methods end");
+		log.debug("updateStudent methods end");
 		return student;
 
 	}

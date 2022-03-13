@@ -1,8 +1,14 @@
-/*Class Name  : Student
- *Description : Model class for Student
- *Date of Creation: 05/02/2022
- *Author : vn51ore
- */
+/* ********************************************************************************
+ * Project Name                                  : StudentApplication
+ * Author                                        : vn51ore
+ *
+ * Copyright Notice
+ *
+ * Copyright (c) 2021 Walmart. All Right Reserved.
+ * This software is the confidential and proprietary information of WalMart
+ * You shall not disclose or use Confidential information without the express
+ * written agreement of Walmart
+ *********************************************************************************/
 package com.example.training.model;
 
 /**
